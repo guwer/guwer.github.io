@@ -1,8 +1,7 @@
- ---
+---
 layout: post
 title: Redis mass insert
 ---
-
 Add multiple entries to Redis DB from a file using redis-cli from powershell.
 
 ```
