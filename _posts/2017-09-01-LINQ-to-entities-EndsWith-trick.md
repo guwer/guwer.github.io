@@ -1,6 +1,6 @@
 ---
 layout: post
-title: LINQ to entities EndsWith trick
+title: LINQ to entities string filtering trick
 published: true
 ---
 Optimize query that uses string filtering.
