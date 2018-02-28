@@ -5,3 +5,15 @@ published: true
 ---
 Use configuration from appsettings.json as POCO object in Startup class and controllers.
 
+Example appsettings.json with some configuration.
+
+```
+"Settings": {
+    "Devices": [
+        "10.10.96.124",
+        "10.10.166.45"
+    ],
+    "ReadInterval": 500
+}
+```
+
