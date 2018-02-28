@@ -46,7 +46,6 @@ public void ConfigureServices(IServiceCollection services)
 ```
 
 To make it possible to inject Settings into conrollers it has to be registered in services.
-
 Startup.cs
 
 ```
@@ -63,6 +62,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
+Then in controller we can use injected settings.
 ConfigController.cs
 
 ```
