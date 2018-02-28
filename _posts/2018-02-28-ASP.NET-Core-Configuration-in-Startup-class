@@ -1,9 +1,9 @@
 ---
 layout: post
-title: ASP.NET Core POCO configuration in Startup class
+title: ASP.NET Core POCO configuration
 published: true
 ---
-Use configuration from appsettings.json in Startup.cs as POCO object.
+Use configuration from appsettings.json as POCO object in Startup class and controllers.
 
 Example appsettings.json with some configuration.
 
