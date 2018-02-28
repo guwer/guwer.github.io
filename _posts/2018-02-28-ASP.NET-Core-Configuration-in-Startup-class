@@ -5,65 +5,7 @@ published: true
 ---
 Use configuration from appsettings.json as POCO object in Startup class and controllers.
 
-
-
-POCO class with matching properties.
-Settings.cs
-
+Example appsettings.json with some configuration.
 ```
-public class Settings
-{
-    public int ReadInterval { get; set; }
-    public IEnumerable<string> Devices { get; set; }
-}
-```
-
-The following code is enough to retrieve config in Startup class.
-Startup.cs
-
-```
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddMvc();
-    
-    settings = new TrendSettings();
-    services.AddOptions();
-    Configuration.GetSection(nameof(Settings)).Bind(settings);
-
-    // here you can use settings
-    services.AddSingleton<ITrend>(p => new UdcTrend(settings.ReadInterval));
-}
-```
-
-To make it possible to inject Settings into conrollers it has to be registered in services.
-Startup.cs
-
-```
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddMvc();
-    
-    settings = new TrendSettings();
-    services.AddOptions();
-    Configuration.GetSection(nameof(Settings)).Bind(settings);
-
-    // now it cna be injected into controllers
-    services.AddSingleton(settings);
-}
-```
-
-Then in controller we can use injected settings.
-ConfigController.cs
-
-```
-public class ConfigController
-{
-    private Settings _settings;
-  
-    // Settings object will be injected
-    public ConfigController(Settings settings)
-    {
-        _settings = settings;
-    }
-}
+asdasd
 ```
