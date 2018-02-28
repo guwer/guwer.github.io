@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ASPNET Core strongly typed Configuration in Startup class
+title: ASP.NET Core POCO configuration in Startup class
 published: true
 ---
 Use configuration from appsettings.json in Startup.cs as POCO object.
