@@ -8,13 +8,13 @@ Use configuration from appsettings.json in Startup.cs as POCO object.
 Example appsettings.json with some configuration.
 
 ```
-  "Settings": {
+"Settings": {
     "Devices": [
-      "10.10.96.124",
-      "10.10.166.45"
+        "10.10.96.124",
+        "10.10.166.45"
     ],
     "ReadInterval": 500
-  }
+}
 ```
 
 POCO class with matching properties.
@@ -56,7 +56,7 @@ public void ConfigureServices(IServiceCollection services)
     settings = new TrendSettings();
     services.AddOptions();
     Configuration.GetSection(nameof(Settings)).Bind(settings);
-    
+
     // now it cna be injected into controllers
     services.AddSingleton(settings);
 }
@@ -68,12 +68,12 @@ ConfigController.cs
 ```
 public class ConfigController
 {
-  private Settings _settings;
+    private Settings _settings;
   
-  // Settings object will be injected
-  public ConfigController(Settings settings)
-  {
-    _settings = settings;
-  }
+    // Settings object will be injected
+    public ConfigController(Settings settings)
+    {
+        _settings = settings;
+    }
 }
 ```
