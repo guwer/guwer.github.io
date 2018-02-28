@@ -7,7 +7,7 @@ Use configuration from appsettings.json as POCO object in Startup class and cont
 
 Example appsettings.json with some configuration.
 
-```
+`
 "Settings": {
     "Devices": [
         "10.10.96.124",
@@ -15,7 +15,7 @@ Example appsettings.json with some configuration.
     ],
     "ReadInterval": 500
 }
-```
+`
 
 POCO class with matching properties.
 Settings.cs
