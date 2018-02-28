@@ -6,10 +6,10 @@ published: true
 
 Use configuration from appsettings.json in Startup.cs as POCO object.
 
-appsettings.json
+Example appsettings.json with some configuration.
 
 ```
-  "TrendSettings": {
+  "Settings": {
     "Devices": [
       "10.10.96.124",
       "10.10.166.45"
@@ -17,7 +17,7 @@ appsettings.json
     "ReadInterval": 500
   }
 ```
-
+POCO class with matching properties.
 Settings.cs
 
 ```
@@ -57,6 +57,7 @@ public void ConfigureServices(IServiceCollection services)
     settings = new TrendSettings();
     services.AddOptions();
     Configuration.GetSection(nameof(Settings)).Bind(settings);
+    
     // now it cna be injected into controllers
     services.AddSingleton(settings);
 }
@@ -64,7 +65,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ConfigController.cs
 
-'''
+```
 public class ConfigController
 {
   private Settings _settings;
@@ -75,4 +76,4 @@ public class ConfigController
     _settings = settings;
   }
 }
-'''
+```
