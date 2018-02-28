@@ -1,0 +1,41 @@
+---
+layout: post
+title: ASP.NET Core strongly typed Configuration in Startup class
+published: true
+---
+
+Use configuration from appsettings.json in Startup.cs as POCO object.
+
+appsettings.json
+```
+  "TrendSettings": {
+    "Devices": [
+      "10.10.96.124",
+      "10.10.166.45"
+    ],
+    "ReadInterval": 500
+  }
+```
+
+Settings.cs
+```
+public class Settings
+{
+    public int ReadInterval { get; set; }
+    public IEnumerable<string> Devices { get; set; }
+}
+```
+
+Startup.cs
+```
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddMvc();
+    
+    settings = new TrendSettings();
+    services.AddOptions();
+    Configuration.GetSection(nameof(Settings)).Bind(settings);
+
+    // here you can use settings
+    services.AddSingleton<ITrend>(p => new UdcTrend(settings.ReadInterval));
+}
