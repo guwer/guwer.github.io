@@ -8,15 +8,7 @@ Use configuration from appsettings.json in Startup.cs as POCO object.
 
 appsettings.json
 
-```
-  "TrendSettings": {
-    "Devices": [
-      "10.10.96.124",
-      "10.10.166.45"
-    ],
-    "ReadInterval": 500
-  }
-```
+
 
 Settings.cs
 
